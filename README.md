@@ -1,5 +1,7 @@
 # &lt;w0s-input-switch&gt;
 
+Implement something like &lt;input type=switch&gt; in a Custom Elements.
+
 ## Demo
 
 - [Demo page](https://saekitominaga.github.io/customelements-input-switch/demo.html)
