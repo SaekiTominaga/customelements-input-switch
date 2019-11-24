@@ -1,6 +1,6 @@
 {
-  "name": "w0s-input-switch",
-  "version": "1.0.0",
+  "name": "@saekitominaga/customelements-input-switch",
+  "version": "1.2.1",
   "description": "Implement something like <input type=switch> in a Custom Elements.",
   "main": "input.switch.mjs",
   "scripts": {
@@ -11,6 +11,8 @@
     "url": "git+https://github.com/SaekiTominaga/customelements-input-switch.git"
   },
   "keywords": [
+    "web-components",
+    "custom-elements",
     "switch"
   ],
   "author": "saekitominaga",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/SaekiTominaga/customelements-input-switch/issues"
   },
-  "homepage": "https://github.com/SaekiTominaga/customelements-input-switch#readme"
+  "homepage": "https://github.com/SaekiTominaga/customelements-input-switch#readme",
+  "publishConfig": {
+    "access": "public"
+  }
 }
