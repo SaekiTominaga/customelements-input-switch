@@ -18,4 +18,4 @@
 <dd>`checkbox`: In browsers that do not support Custom Elements v1 (e.g. Microsoft Edge 44), generate &lt;input type=checkbox&gt; instead.</dd>
 </dl>
 
-e.g. `<label><w0s-input-switch checked="" storage-key="ctrl3" polyfill="hidden"></w0s-input-switch> input switch 3</label>`
+e.g. `<label><w0s-input-switch checked="" disabled="" storage-key="ctrl" polyfill="hidden"></w0s-input-switch> input switch</label>`
