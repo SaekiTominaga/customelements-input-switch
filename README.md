@@ -1,8 +1,8 @@
 # &lt;w0s-input-switch&gt;
 
-## Sample
+## Demo
 
-- [Sample](https://saekitominaga.github.io/customelements-input-switch/sample.html)
+- [Demo page](https://saekitominaga.github.io/customelements-input-switch/demo.html)
 
 ## Attributes
 
