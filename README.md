@@ -1,5 +1,7 @@
 # &lt;w0s-input-switch&gt;
 
+[![npm version](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch.svg)](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch)
+
 Implement something like &lt;input type=switch&gt; in a Custom Elements.
 
 ## Demo
