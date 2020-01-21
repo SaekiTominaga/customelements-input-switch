@@ -10,7 +10,7 @@
  *                     `checkbox`: カスタム要素 v1 未対応ブラウザ（Microsoft Edge 44 等）では代替に <input type=checkbox> を生成する">
  * </x-input-switch>
  *
- * @version 1.3.0 2020-01-17 CSS を adoptedStyleSheets で設定するように変更
+ * @version 1.3.1 2020-01-21 CSSStyleSheet へのCSSの設定を replaceSync に変更
  */
 export default class InputSwitch extends HTMLElement {
 	static get observedAttributes() {
@@ -89,7 +89,7 @@ export default class InputSwitch extends HTMLElement {
 
 		if (shadow.adoptedStyleSheets !== undefined) {
 			const cssStyleSheet = new CSSStyleSheet();
-			cssStyleSheet.replace(cssString);
+			cssStyleSheet.replaceSync(cssString);
 
 			shadow.adoptedStyleSheets = [cssStyleSheet];
 		} else {
