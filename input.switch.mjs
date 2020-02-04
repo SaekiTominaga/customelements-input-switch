@@ -10,7 +10,7 @@
  *                     `checkbox`: カスタム要素 v1 未対応ブラウザ（Microsoft Edge 44 等）では代替に <input type=checkbox> を生成する">
  * </x-input-switch>
  *
- * @version 1.3.1 2020-01-21 CSSStyleSheet へのCSSの設定を replaceSync に変更
+ * @version 1.4.0 2020-02-04 初期表示で checked 状態を自動変更するとき、 change イベントを発生させるように変更
  */
 export default class InputSwitch extends HTMLElement {
 	static get observedAttributes() {
@@ -114,10 +114,16 @@ export default class InputSwitch extends HTMLElement {
 				const storageValue = this._myLocalStorage.getItem(storageKey);
 				switch (storageValue) {
 					case 'true':
-						hostElement.checked = true;
+						if (!hostElement.checked) {
+							hostElement.checked = true;
+							hostElement.dispatchEvent(new Event('change'));
+						}
 						break;
 					case 'false':
-						hostElement.checked = false;
+						if (hostElement.checked) {
+							hostElement.checked = false;
+							hostElement.dispatchEvent(new Event('change'));
+						}
 						break;
 				}
 			} catch(e) {
