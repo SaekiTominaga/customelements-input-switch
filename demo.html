@@ -1,44 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>&lt;w0s-input-switch&gt; Sample</title>
-<script type="module">
-import CustomElementInputSwitch, {polyfill as customElementInputSwitchPolyfill} from './input.switch.mjs';
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>&lt;w0s-input-switch&gt; Sample</title>
+		<style>
+			.source {
+				margin: 1em 0 2em;
+				padding: 1em;
+				border: 1px solid #999;
+			}
 
-if (window.customElements !== undefined) {
-	customElements.define(
-		'w0s-input-switch', CustomElementInputSwitch
-	);
-} else {
-	console.info('\'Custom Elements v1\' is not supported.');
-	customElementInputSwitchPolyfill('w0s-input-switch');
-}
-</script>
-</head>
-<body>
-<h1>&lt;w0s-input-switch&gt; Sample</h1>
+			.switch {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+			}
 
-<section>
-<h2>Explicit label</h2>
+			p.switch {
+				display: flex;
+			}
+		</style>
+		<script type="module">
+			import InputSwitch from './InputSwitch.mjs';
 
-<pre><code>&lt;w0s-input-switch id="input-switch-1"&gt;&lt;/w0s-input-switch&gt; &lt;label for="input-switch-1"&gt;input switch 1&lt;/label&gt;</code></pre>
+			customElements.define('w0s-input-switch', InputSwitch);
+		</script>
+	</head>
+	<body>
+		<h1>&lt;w0s-input-switch&gt; Sample</h1>
 
-<p><w0s-input-switch id="input-switch-1"></w0s-input-switch> <label for="input-switch-1">input switch 1</label></p>
+		<p class="source">
+			Source code: <a href="https://github.com/SaekiTominaga/customelements-input-switch/blob/master/InputSwitch.mjs.ts">src (TypeScript)</a>,
+			<a href="https://github.com/SaekiTominaga/customelements-input-switch/blob/master/InputSwitch.mjs">dist (JavaScript)</a>
+		</p>
 
-<p><small>* Association is not performed in browsers that do not support <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face-example">formAssociated property</a>. As of September 2019, Chrome 77 is supported.</small></p>
-</section>
+		<section>
+			<h2>Explicit label</h2>
 
-<section>
-<h2>Implicit label</h2>
+			<pre><code>&lt;w0s-input-switch id="input-switch-1"&gt;&lt;/w0s-input-switch&gt; &lt;label for="input-switch-1"&gt;Explicit label&lt;/label&gt;</code></pre>
 
-<pre><code>&lt;label&gt;&lt;w0s-input-switch&gt;&lt;/w0s-input-switch&gt; input switch 2&lt;/label&gt;</code></pre>
+			<p class="switch"><w0s-input-switch id="input-switch-1"></w0s-input-switch> <label for="input-switch-1">Explicit label</label></p>
 
-<p><label><w0s-input-switch></w0s-input-switch> input switch 2</label></p>
+			<p>
+				<small
+					>* Association is not performed in browsers that do not support
+					<a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face-example">formAssociated property</a>. As of September 2019,
+					Chrome 77 is supported.</small
+				>
+			</p>
+		</section>
 
-<p><small>* Association is not performed in browsers that do not support <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face-example">formAssociated property</a>. As of September 2019, Chrome 77 is supported.</small></p>
-</section>
+		<section>
+			<h2>Implicit label</h2>
 
-</body>
+			<pre><code>&lt;label&gt;&lt;w0s-input-switch&gt;&lt;/w0s-input-switch&gt; Implicit label&lt;/label&gt;</code></pre>
+
+			<p>
+				<label class="switch"><w0s-input-switch></w0s-input-switch> Implicit label</label>
+			</p>
+
+			<p>
+				<small
+					>* Association is not performed in browsers that do not support
+					<a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-face-example">formAssociated property</a>. As of September 2019,
+					Chrome 77 is supported.</small
+				>
+			</p>
+		</section>
+
+		<section>
+			<h2>`checked` attribute</h2>
+
+			<pre><code>&lt;label&gt;&lt;w0s-input-switch checked=""&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+
+			<p>
+				<label class="switch"><w0s-input-switch checked=""></w0s-input-switch> switch</label>
+			</p>
+		</section>
+
+		<section>
+			<h2>`disabled` attribute</h2>
+
+			<pre><code>&lt;label&gt;&lt;w0s-input-switch disabled=""&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+
+			<p>
+				<label class="switch"><w0s-input-switch disabled=""></w0s-input-switch> switch</label>
+			</p>
+		</section>
+
+		<section>
+			<h2>`storage-key` attribute</h2>
+
+			<pre><code>&lt;label&gt;&lt;w0s-input-switch storage-key="foo"&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+
+			<p>
+				<label class="switch"><w0s-input-switch storage-key="foo"></w0s-input-switch> switch</label>
+			</p>
+		</section>
+
+		<section>
+			<h2>Style customization</h2>
+
+			<p>
+				<label class="switch"
+					><w0s-input-switch
+						style="
+							--switch-width: 10em;
+							--switch-height: 3em;
+							--switch-padding: -0.5em;
+							--switch-bgcolor-on: lightgreen;
+							--switch-bgcolor-off: gray;
+							--switch-ball-color: purple;
+							--switch-animation-duration: 1s;
+							--switch-outline-mouse-focus: 4px dotted orange;
+						"
+					></w0s-input-switch>
+					switch</label
+				>
+			</p>
+
+			<p>* CSS custom properties names have changed in the version 2.0.0 update. <strong>(Not compatible with version 1 series)</strong></p>
+		</section>
+	</body>
 </html>
