@@ -26,7 +26,7 @@ e.g. `<label><w0s-input-switch checked="" disabled="" storage-key="ctrl"></w0s-i
 ## Style customization (CSS custom properties)
 
 | name | deault | Description |
-|-|-|-|-|-|
+|-|-|-|
 | --switch-width | 3.6em | Outer frame width |
 | --switch-height | 1.8em | Outer frame height |
 | --switch-padding | 0.2em | Spacing between the outer frame and the sphere (Negative value can be specified) |
