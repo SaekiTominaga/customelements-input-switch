@@ -27,17 +27,17 @@ export default class InputSwitch extends HTMLElement {
     /**
      * スイッチの状態を変更する
      */
-    private _onChange;
+    private _changeEvent;
     /**
      * スイッチをクリックしたときの処理
      *
      * @param {MouseEvent} ev - Event
      */
-    private _onClick;
+    private _clickEvent;
     /**
      * スイッチにフォーカスした状態でキーボードが押された時の処理
      *
      * @param {KeyboardEvent} ev - Event
      */
-    private _onKeydown;
+    private _keydownEvent;
 }

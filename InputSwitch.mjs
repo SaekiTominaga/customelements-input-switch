@@ -129,9 +129,9 @@ export default class InputSwitch extends HTMLElement {
             /* adoptedStyleSheets 未対応環境 */
             shadow.innerHTML += `<style>${cssString}</style>`;
         }
-        __classPrivateFieldSet(this, _changeEventListener, this._onChange.bind(this));
-        __classPrivateFieldSet(this, _clickEventListener, this._onClick.bind(this));
-        __classPrivateFieldSet(this, _keydownEventListener, this._onKeydown.bind(this));
+        __classPrivateFieldSet(this, _changeEventListener, this._changeEvent.bind(this));
+        __classPrivateFieldSet(this, _clickEventListener, this._clickEvent.bind(this));
+        __classPrivateFieldSet(this, _keydownEventListener, this._keydownEvent.bind(this));
     }
     static get formAssociated() {
         return true;
@@ -245,7 +245,7 @@ export default class InputSwitch extends HTMLElement {
     /**
      * スイッチの状態を変更する
      */
-    _onChange() {
+    _changeEvent() {
         const checked = this.checked;
         this.checked = !checked;
         if (__classPrivateFieldGet(this, _myLocalStorage) !== null) {
@@ -261,7 +261,7 @@ export default class InputSwitch extends HTMLElement {
      *
      * @param {MouseEvent} ev - Event
      */
-    _onClick(ev) {
+    _clickEvent(ev) {
         this.dispatchEvent(new Event('change'));
         ev.preventDefault();
     }
@@ -270,7 +270,7 @@ export default class InputSwitch extends HTMLElement {
      *
      * @param {KeyboardEvent} ev - Event
      */
-    _onKeydown(ev) {
+    _keydownEvent(ev) {
         switch (ev.key) {
             case ' ':
                 this.dispatchEvent(new Event('change'));

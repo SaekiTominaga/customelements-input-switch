@@ -130,9 +130,9 @@ export default class InputSwitch extends HTMLElement {
 			shadow.innerHTML += `<style>${cssString}</style>`;
 		}
 
-		this.#changeEventListener = this._onChange.bind(this);
-		this.#clickEventListener = this._onClick.bind(this);
-		this.#keydownEventListener = this._onKeydown.bind(this);
+		this.#changeEventListener = this._changeEvent.bind(this);
+		this.#clickEventListener = this._clickEvent.bind(this);
+		this.#keydownEventListener = this._keydownEvent.bind(this);
 	}
 
 	connectedCallback(): void {
@@ -258,7 +258,7 @@ export default class InputSwitch extends HTMLElement {
 	/**
 	 * スイッチの状態を変更する
 	 */
-	private _onChange(): void {
+	private _changeEvent(): void {
 		const checked = this.checked;
 
 		this.checked = !checked;
@@ -277,7 +277,7 @@ export default class InputSwitch extends HTMLElement {
 	 *
 	 * @param {MouseEvent} ev - Event
 	 */
-	private _onClick(ev: MouseEvent): void {
+	private _clickEvent(ev: MouseEvent): void {
 		this.dispatchEvent(new Event('change'));
 		ev.preventDefault();
 	}
@@ -287,7 +287,7 @@ export default class InputSwitch extends HTMLElement {
 	 *
 	 * @param {KeyboardEvent} ev - Event
 	 */
-	private _onKeydown(ev: KeyboardEvent): void {
+	private _keydownEvent(ev: KeyboardEvent): void {
 		switch (ev.key) {
 			case ' ':
 				this.dispatchEvent(new Event('change'));
