@@ -22,7 +22,7 @@ var _myLocalStorage, _changeEventListener, _clickEventListener, _keydownEventLis
  *   storage-key="[Optional] Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)"
  * </x-input-switch>
  *
- * @version 2.0.0
+ * @version 2.0.2
  */
 export default class InputSwitch extends HTMLElement {
     constructor() {
@@ -140,6 +140,8 @@ export default class InputSwitch extends HTMLElement {
         return ['checked', 'disabled', 'storage-key'];
     }
     connectedCallback() {
+        const checked = this.checked;
+        const disabled = this.disabled;
         if (__classPrivateFieldGet(this, _myLocalStorage) !== null) {
             const storageKey = this.storageKey;
             if (storageKey !== null && storageKey !== '') {
@@ -147,24 +149,26 @@ export default class InputSwitch extends HTMLElement {
                 const storageValue = __classPrivateFieldGet(this, _myLocalStorage).getItem(storageKey);
                 switch (storageValue) {
                     case 'true':
-                        if (!this.checked) {
+                        if (!checked) {
                             this.checked = true;
                         }
                         break;
                     case 'false':
-                        if (this.checked) {
+                        if (checked) {
                             this.checked = false;
                         }
                         break;
                 }
             }
         }
-        this.tabIndex = this.disabled ? -1 : 0;
-        this.setAttribute('aria-checked', String(this.checked));
-        this.setAttribute('aria-disabled', String(this.disabled));
-        this.addEventListener('change', __classPrivateFieldGet(this, _changeEventListener), { passive: true });
-        this.addEventListener('click', __classPrivateFieldGet(this, _clickEventListener));
-        this.addEventListener('keydown', __classPrivateFieldGet(this, _keydownEventListener));
+        this.tabIndex = disabled ? -1 : 0;
+        this.setAttribute('aria-checked', String(checked));
+        this.setAttribute('aria-disabled', String(disabled));
+        if (!disabled) {
+            this.addEventListener('change', __classPrivateFieldGet(this, _changeEventListener), { passive: true });
+            this.addEventListener('click', __classPrivateFieldGet(this, _clickEventListener));
+            this.addEventListener('keydown', __classPrivateFieldGet(this, _keydownEventListener));
+        }
     }
     disconnectedCallback() {
         this.removeEventListener('change', __classPrivateFieldGet(this, _changeEventListener));

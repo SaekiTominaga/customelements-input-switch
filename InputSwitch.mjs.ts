@@ -8,7 +8,7 @@
  *   storage-key="[Optional] Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)"
  * </x-input-switch>
  *
- * @version 2.0.0
+ * @version 2.0.2
  */
 export default class InputSwitch extends HTMLElement {
 	#myLocalStorage: Storage | null = null;
@@ -136,6 +136,9 @@ export default class InputSwitch extends HTMLElement {
 	}
 
 	connectedCallback(): void {
+		const checked = this.checked;
+		const disabled = this.disabled;
+
 		if (this.#myLocalStorage !== null) {
 			const storageKey = this.storageKey;
 			if (storageKey !== null && storageKey !== '') {
@@ -143,12 +146,12 @@ export default class InputSwitch extends HTMLElement {
 				const storageValue = this.#myLocalStorage.getItem(storageKey);
 				switch (storageValue) {
 					case 'true':
-						if (!this.checked) {
+						if (!checked) {
 							this.checked = true;
 						}
 						break;
 					case 'false':
-						if (this.checked) {
+						if (checked) {
 							this.checked = false;
 						}
 						break;
@@ -156,13 +159,15 @@ export default class InputSwitch extends HTMLElement {
 			}
 		}
 
-		this.tabIndex = this.disabled ? -1 : 0;
-		this.setAttribute('aria-checked', String(this.checked));
-		this.setAttribute('aria-disabled', String(this.disabled));
+		this.tabIndex = disabled ? -1 : 0;
+		this.setAttribute('aria-checked', String(checked));
+		this.setAttribute('aria-disabled', String(disabled));
 
-		this.addEventListener('change', this.#changeEventListener, { passive: true });
-		this.addEventListener('click', this.#clickEventListener);
-		this.addEventListener('keydown', this.#keydownEventListener);
+		if (!disabled) {
+			this.addEventListener('change', this.#changeEventListener, { passive: true });
+			this.addEventListener('click', this.#clickEventListener);
+			this.addEventListener('keydown', this.#keydownEventListener);
+		}
 	}
 
 	disconnectedCallback(): void {
