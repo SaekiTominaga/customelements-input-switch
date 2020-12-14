@@ -8,7 +8,7 @@
  *   storage-key="[Optional] Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)"
  * </x-input-switch>
  *
- * @version 2.0.2
+ * @version 2.0.4
  */
 export default class InputSwitch extends HTMLElement {
     #private;
