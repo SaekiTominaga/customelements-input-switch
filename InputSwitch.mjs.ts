@@ -8,7 +8,7 @@
  *   storage-key="[Optional] Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)"
  * </x-input-switch>
  *
- * @version 2.0.4
+ * @version 2.0.5
  */
 export default class InputSwitch extends HTMLElement {
 	#myLocalStorage: Storage | null = null;
@@ -27,8 +27,6 @@ export default class InputSwitch extends HTMLElement {
 
 	constructor() {
 		super();
-
-		this.setAttribute('role', 'switch');
 
 		try {
 			this.#myLocalStorage = localStorage;
@@ -161,6 +159,7 @@ export default class InputSwitch extends HTMLElement {
 		}
 
 		this.tabIndex = disabled ? -1 : 0;
+		this.setAttribute('role', 'switch');
 		this.setAttribute('aria-checked', String(checked));
 		this.setAttribute('aria-disabled', String(disabled));
 
