@@ -16,8 +16,8 @@
 		"terser": "^5.5.1",
 		"typescript": "^4.1.3"
 	},
-	"main": "InputSwitch.mjs",
-	"types": "InputSwitch.mjs.d.ts",
+	"main": "dist/InputSwitch.mjs",
+	"types": "dist/InputSwitch.mjs.d.ts",
 	"scripts": {
 		"_ts-watch:tsc": "tsc -d -w",
 		"_ts-watch:rename": "onchange -f add -v dist/**/*.mjs.js -- renamer --force --find .mjs.js --replace .mjs dist/**/*",
