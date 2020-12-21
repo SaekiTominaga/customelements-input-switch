@@ -41,3 +41,4 @@ export default class InputSwitch extends HTMLElement {
      */
     private _keydownEvent;
 }
+//# sourceMappingURL=InputSwitch.mjs.d.ts.map

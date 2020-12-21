@@ -19,7 +19,7 @@
 	"main": "dist/InputSwitch.mjs",
 	"types": "dist/InputSwitch.mjs.d.ts",
 	"scripts": {
-		"_ts-watch:tsc": "tsc -d -w",
+		"_ts-watch:tsc": "tsc -w",
 		"_ts-watch:rename": "onchange -f add -v dist/**/*.mjs.js -- renamer --force --find .mjs.js --replace .mjs dist/**/*",
 		"_ts-watch:compress": "onchange -f add -f change -v dist/InputSwitch.mjs -- brotlin compress dist/InputSwitch.mjs -m 1",
 		"_ts-watch:minify": "onchange -f add -f change -v dist/InputSwitch.mjs -- terser dist/InputSwitch.mjs -o dist/InputSwitch.min.mjs -c ecma=2020 --mangle --ecma 2020 --module --source-map base=dist,filename=InputSwitch.min.mjs,includeSources",
