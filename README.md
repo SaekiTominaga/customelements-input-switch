@@ -1,8 +1,8 @@
-# &lt;w0s-input-switch&gt;
+# &lt;input type=switch&gt; by Custom Elements
 
 [![npm version](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch.svg)](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch)
 
-Implement something like &lt;input type=switch&gt; in a Custom Elements.
+Implement something like &lt;input type=switch&gt; by Custom Elements.
 
 ## Demo
 
@@ -19,7 +19,7 @@ Implement something like &lt;input type=switch&gt; in a Custom Elements.
 <dd>Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)</dd>
 </dl>
 
-e.g. `<label><w0s-input-switch checked="" disabled="" storage-key="ctrl"></w0s-input-switch> input switch</label>`
+e.g. `<label><x-input-switch checked="" disabled="" storage-key="ctrl"></x-input-switch> input switch</label>`
 
 \* The `polyfill` attribute that existed in version 1 series is obsolete in version 2.0.0 .
 
