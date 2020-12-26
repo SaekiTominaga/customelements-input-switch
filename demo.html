@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>&lt;w0s-input-switch&gt; Sample</title>
+		<title>&lt;x-input-switch&gt; Sample</title>
 		<style>
 			.switch {
 				display: inline-flex;
@@ -17,20 +17,20 @@
 		<script type="module">
 			import InputSwitch from './dist/InputSwitch.mjs';
 
-			customElements.define('w0s-input-switch', InputSwitch);
+			customElements.define('x-input-switch', InputSwitch);
 
-			document.getElementById('js-generate').replaceWith(document.createElement('w0s-input-switch'));
+			document.getElementById('js-generate').replaceWith(document.createElement('x-input-switch'));
 		</script>
 	</head>
 	<body>
-		<h1>&lt;w0s-input-switch&gt; Sample</h1>
+		<h1>&lt;x-input-switch&gt; Sample</h1>
 
 		<section>
 			<h2>Explicit label</h2>
 
-			<pre><code>&lt;w0s-input-switch id="input-switch-1"&gt;&lt;/w0s-input-switch&gt; &lt;label for="input-switch-1"&gt;Explicit label&lt;/label&gt;</code></pre>
+			<pre><code>&lt;x-input-switch id="input-switch-1"&gt;&lt;/x-input-switch&gt; &lt;label for="input-switch-1"&gt;Explicit label&lt;/label&gt;</code></pre>
 
-			<p class="switch"><w0s-input-switch id="input-switch-1"></w0s-input-switch> <label for="input-switch-1">Explicit label</label></p>
+			<p class="switch"><x-input-switch id="input-switch-1"></x-input-switch> <label for="input-switch-1">Explicit label</label></p>
 
 			<p>
 				<small
@@ -44,10 +44,10 @@
 		<section>
 			<h2>Implicit label</h2>
 
-			<pre><code>&lt;label&gt;&lt;w0s-input-switch&gt;&lt;/w0s-input-switch&gt; Implicit label&lt;/label&gt;</code></pre>
+			<pre><code>&lt;label&gt;&lt;x-input-switch&gt;&lt;/x-input-switch&gt; Implicit label&lt;/label&gt;</code></pre>
 
 			<p>
-				<label class="switch"><w0s-input-switch></w0s-input-switch> Implicit label</label>
+				<label class="switch"><x-input-switch></x-input-switch> Implicit label</label>
 			</p>
 
 			<p>
@@ -70,30 +70,30 @@
 		<section>
 			<h2>`checked` attribute</h2>
 
-			<pre><code>&lt;label&gt;&lt;w0s-input-switch checked=""&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+			<pre><code>&lt;label&gt;&lt;x-input-switch checked=""&gt;&lt;/x-input-switch&gt; switch&lt;/label&gt;</code></pre>
 
 			<p>
-				<label class="switch"><w0s-input-switch checked=""></w0s-input-switch> switch</label>
+				<label class="switch"><x-input-switch checked=""></x-input-switch> switch</label>
 			</p>
 		</section>
 
 		<section>
 			<h2>`disabled` attribute</h2>
 
-			<pre><code>&lt;label&gt;&lt;w0s-input-switch disabled=""&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+			<pre><code>&lt;label&gt;&lt;x-input-switch disabled=""&gt;&lt;/x-input-switch&gt; switch&lt;/label&gt;</code></pre>
 
 			<p>
-				<label class="switch"><w0s-input-switch disabled=""></w0s-input-switch> switch</label>
+				<label class="switch"><x-input-switch disabled=""></x-input-switch> switch</label>
 			</p>
 		</section>
 
 		<section>
 			<h2>`storage-key` attribute</h2>
 
-			<pre><code>&lt;label&gt;&lt;w0s-input-switch storage-key="foo"&gt;&lt;/w0s-input-switch&gt; switch&lt;/label&gt;</code></pre>
+			<pre><code>&lt;label&gt;&lt;x-input-switch storage-key="foo"&gt;&lt;/x-input-switch&gt; switch&lt;/label&gt;</code></pre>
 
 			<p>
-				<label class="switch"><w0s-input-switch storage-key="foo"></w0s-input-switch> switch</label>
+				<label class="switch"><x-input-switch storage-key="foo"></x-input-switch> switch</label>
 			</p>
 		</section>
 
@@ -102,7 +102,7 @@
 
 			<p>
 				<label class="switch"
-					><w0s-input-switch
+					><x-input-switch
 						style="
 							--switch-width: 10em;
 							--switch-height: 3em;
@@ -113,7 +113,7 @@
 							--switch-animation-duration: 1s;
 							--switch-outline-mouse-focus: 4px dotted orange;
 						"
-					></w0s-input-switch>
+					></x-input-switch>
 					switch</label
 				>
 			</p>
