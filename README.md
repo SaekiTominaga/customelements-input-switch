@@ -8,6 +8,16 @@ Implement something like &lt;input type=switch&gt; by Custom Elements.
 
 - [Demo page](https://saekitominaga.github.io/customelements-input-switch/demo.html)
 
+## Examples
+
+```
+<label><x-input-switch
+  checked=""
+  disabled=""
+  storage-key="foo"
+</x-input-switch> switch</label>
+```
+
 ## Attributes
 
 <dl>

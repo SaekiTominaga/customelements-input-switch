@@ -1,14 +1,7 @@
 /**
  * <input type="switch">
  *
- * @example
- * <x-input-switch
- *   checked="[Optional] Whether the control is checked."
- *   disabled="[Optional] Whether the form control is disabled."
- *   storage-key="[Optional] Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)"
- * </x-input-switch>
- *
- * @version 2.0.5
+ * @version 2.1.0
  */
 export default class InputSwitch extends HTMLElement {
     #private;
@@ -41,4 +34,4 @@ export default class InputSwitch extends HTMLElement {
      */
     private _keydownEvent;
 }
-//# sourceMappingURL=InputSwitch.mjs.d.ts.map
+//# sourceMappingURL=InputSwitch.esm.d.ts.map
