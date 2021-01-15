@@ -278,3 +278,4 @@ export default class InputSwitch extends HTMLElement {
     }
 }
 _myLocalStorage = new WeakMap(), _changeEventListener = new WeakMap(), _clickEventListener = new WeakMap(), _keydownEventListener = new WeakMap();
+//# sourceMappingURL=InputSwitch.js.map

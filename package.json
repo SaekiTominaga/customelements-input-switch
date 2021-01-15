@@ -2,7 +2,36 @@
 	"name": "@saekitominaga/customelements-input-switch",
 	"version": "2.1.0",
 	"description": "Implement something like <input type=switch> by Custom Elements.",
+	"keywords": [
+		"web-components",
+		"custom-elements",
+		"switch"
+	],
+	"homepage": "https://github.com/SaekiTominaga/customelements-input-switch#readme",
+	"bugs": {
+		"url": "https://github.com/SaekiTominaga/customelements-input-switch/issues"
+	},
+	"license": "MIT",
+	"author": "Saeki Tominaga",
+	"files": [
+		"dist",
+		"src"
+	],
 	"type": "module",
+	"browser": "dist/InputSwitch.js",
+	"types": "dist/InputSwitch.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SaekiTominaga/customelements-input-switch.git"
+	},
+	"scripts": {
+		"_build:tsc": "tsc -w",
+		"_build:compress": "onchange -f add -f change -v dist/InputSwitch.js -- brotlin compress dist/InputSwitch.js -m 1",
+		"_build:minify": "onchange -f add -f change -v dist/InputSwitch.js -- terser dist/InputSwitch.js -o dist/InputSwitch.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/InputSwitch.js.map',filename='InputSwitch.js',includeSources,url='InputSwitch.min.js.map'",
+		"_build:minify-compress": "onchange -f add -f change -v dist/InputSwitch.min.js -- brotlin compress dist/InputSwitch.min.js -m 1",
+		"_build:minify-declaration": "onchange -f add -f change -v dist/InputSwitch.d.ts -- cpy dist/InputSwitch.d.ts dist --rename=InputSwitch.min.d.ts",
+		"build": "run-p _build:*"
+	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.11.1",
 		"@typescript-eslint/parser": "^4.11.1",
@@ -16,31 +45,6 @@
 		"terser": "^5.5.1",
 		"typescript": "^4.1.3"
 	},
-	"main": "dist/InputSwitch.esm.js",
-	"types": "dist/InputSwitch.esm.d.ts",
-	"scripts": {
-		"_ts-watch:tsc": "tsc -w",
-		"_ts-watch:compress": "onchange -f add -f change -v dist/InputSwitch.esm.js -- brotlin compress dist/InputSwitch.esm.js -m 1",
-		"_ts-watch:minify": "onchange -f add -f change -v dist/InputSwitch.esm.js -- terser dist/InputSwitch.esm.js -o dist/InputSwitch.min.esm.js -c ecma=2020 --mangle --ecma 2020 --module --source-map base=dist,filename=InputSwitch.esm.js,includeSources",
-		"_ts-watch:compress-minify": "onchange -f add -f change -v dist/InputSwitch.min.esm.js -- brotlin compress dist/InputSwitch.min.esm.js -m 1",
-		"_ts-watch:dts-minify": "onchange -f add -f change -v dist/InputSwitch.esm.d.ts -- cpy dist/InputSwitch.esm.d.ts dist --rename=InputSwitch.min.esm.d.ts",
-		"ts-watch": "run-p _ts-watch:*"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/SaekiTominaga/customelements-input-switch.git"
-	},
-	"keywords": [
-		"web-components",
-		"custom-elements",
-		"switch"
-	],
-	"author": "Saeki Tominaga",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/SaekiTominaga/customelements-input-switch/issues"
-	},
-	"homepage": "https://github.com/SaekiTominaga/customelements-input-switch#readme",
 	"publishConfig": {
 		"access": "public"
 	}
