@@ -10,12 +10,12 @@ Implement something like &lt;input type=switch&gt; by Custom Elements.
 
 ## Examples
 
-```
+```HTML
 <label><x-input-switch
   checked=""
   disabled=""
   storage-key="foo"
-</x-input-switch> switch</label>
+></x-input-switch> switch</label>
 ```
 
 ## Attributes
