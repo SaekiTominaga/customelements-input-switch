@@ -18,31 +18,23 @@
 		"src"
 	],
 	"type": "module",
-	"browser": "dist/InputSwitch.js",
+	"main": "dist/InputSwitch.js",
+	"module": "dist/InputSwitch.js",
 	"types": "dist/InputSwitch.d.ts",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/SaekiTominaga/customelements-input-switch.git"
 	},
 	"scripts": {
-		"_build:tsc": "tsc -w",
-		"_build:compress": "onchange -f add -f change -v dist/InputSwitch.js -- brotlin compress dist/InputSwitch.js -m 1",
-		"_build:minify": "onchange -f add -f change -v dist/InputSwitch.js -- terser dist/InputSwitch.js -o dist/InputSwitch.min.js -c ecma=2020 --mangle --ecma 2020 --module --source-map content='dist/InputSwitch.js.map',filename='InputSwitch.js',includeSources,url='InputSwitch.min.js.map'",
-		"_build:minify-compress": "onchange -f add -f change -v dist/InputSwitch.min.js -- brotlin compress dist/InputSwitch.min.js -m 1",
-		"_build:minify-declaration": "onchange -f add -f change -v dist/InputSwitch.d.ts -- cpy dist/InputSwitch.d.ts dist --rename=InputSwitch.min.d.ts",
-		"build": "run-p _build:*"
+		"build": "tsc",
+		"watch": "tsc -w"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.13.0",
 		"@typescript-eslint/parser": "^4.13.0",
-		"brotlin": "^1.1.0",
-		"cpy-cli": "^3.1.1",
 		"eslint": "^7.17.0",
 		"eslint-config-prettier": "^7.1.0",
 		"eslint-plugin-jsdoc": "^30.7.13",
-		"npm-run-all": "^4.1.5",
-		"onchange": "^7.1.0",
-		"terser": "^5.5.1",
 		"typescript": "^4.1.3"
 	},
 	"publishConfig": {
