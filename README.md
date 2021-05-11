@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch.svg)](https://badge.fury.io/js/%40saekitominaga%2Fcustomelements-input-switch)
 
-Implement something like `&lt;input type=switch&gt;` by Custom Elements.
+Implement something like `<input type=switch>` by Custom Elements.
 
 ## Demo
 
@@ -21,11 +21,11 @@ Implement something like `&lt;input type=switch&gt;` by Custom Elements.
 ## Attributes
 
 <dl>
-<dt>`checked` [optional]</dt>
+<dt><code>checked</code> [optional]</dt>
 <dd>Whether the control is checked. (Same as <a href="https://html.spec.whatwg.org/multipage/input.html#attr-input-checked">checked attribute of &lt;input&gt; Element</a>)</dd>
-<dt>`disabled` [optional]</dt>
+<dt><code>disabled</code> [optional]</dt>
 <dd>Whether the form control is disabled. (Same as <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-disabled">disabled attribute of &lt;input&gt; Element</a>)</dd>
-<dt>`storage-key` [optional]</dt>
+<dt><code>storage-key</code> [optional]</dt>
 <dd>Save this value as localStorage key when switching controls. (value is `true` or `false` depending on the check state)</dd>
 </dl>
 
