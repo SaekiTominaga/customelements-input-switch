@@ -14,8 +14,6 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 var _myLocalStorage, _changeEventListener, _clickEventListener, _keydownEventListener;
 /**
  * <input type="switch">
- *
- * @version 2.1.0
  */
 export default class InputSwitch extends HTMLElement {
     constructor() {

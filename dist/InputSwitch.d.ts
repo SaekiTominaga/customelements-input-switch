@@ -1,7 +1,5 @@
 /**
  * <input type="switch">
- *
- * @version 2.1.0
  */
 export default class InputSwitch extends HTMLElement {
     #private;
