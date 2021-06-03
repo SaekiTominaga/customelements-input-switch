@@ -1,6 +1,6 @@
 {
 	"name": "@saekitominaga/customelements-input-switch",
-	"version": "2.2.2",
+	"version": "2.2.3",
 	"description": "Implement something like <input type=switch> by Custom Elements.",
 	"keywords": [
 		"web-components",
