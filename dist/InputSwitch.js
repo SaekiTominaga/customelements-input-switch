@@ -43,8 +43,8 @@ export default class InputSwitch extends HTMLElement {
 
 				position: relative;
 				display: inline-block;
-				width: var(--switch-width);
-				height: var(--switch-height);
+				min-width: var(--switch-width);
+				min-height: var(--switch-height);
 			}
 
 			:host(:focus:not(:focus-visible)) {
